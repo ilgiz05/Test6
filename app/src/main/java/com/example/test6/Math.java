@@ -18,14 +18,16 @@ public class Math {
         int num2 = Integer.parseInt(b.trim());
 
         return String.valueOf(num1 - num2);
-
     }
 
     public String divide(String a, String b) {
         int num1 = Integer.parseInt(a.trim());
         int num2 = Integer.parseInt(b.trim());
+        if ( num1 == 0 || num2==0) {
+            return "Error detected negative value";
+        }
+        return String.valueOf(num1/num2);
 
-        return String.valueOf(num1 / num2);
     }
 
     public String multiply(String a, String b) {
@@ -35,17 +37,7 @@ public class Math {
 
     }
 
-    public String dividedByZero(String a, String b) {
-        int num1 = Integer.parseInt(a.trim());
-        int num2 = Integer.parseInt(b.trim());
-        if (num1 < 0 || num2 < 0) {
-            return "Num 1 cannot be divided by zero";
 
-        }
-        return "Error,you can't divide by zero";
-
-
-    }
 
 
     public String areSymbolsIncluded(String a, String b) {
@@ -53,14 +45,9 @@ public class Math {
         Matcher m1 = p.matcher(a);
         boolean c = m1.find();
 
-
         if (c) {
             return "Error,special characters have been detected";
-
         }
         return String.valueOf(a+b);
-
-
-
     }
     }
